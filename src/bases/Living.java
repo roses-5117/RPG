@@ -36,25 +36,19 @@ public  abstract class Living {
 		}
 		
 		public void setOffensive(int offensive) {
-			this.offensive=offensive;
+			this.offensive = offensive;
 		}
-		
-		//④			
-		public Living(String name,String weapon) {
-			this.name=name;
-			this.weapon=weapon;
-		}
-		
-		//⑤	
-		public abstract void attack(Living target);
 
-		//⑥	
+	    // ターゲットに攻撃するメソッド
+		public abstract void attack(Living target); 
+
+		// 自分自身を表現する文字列のオーバーライド
 		@Override
-		public String  toString() {
-			String status="名前"+name+",武器"+ weapon + ", HP: " + hp + ", 攻撃力: " + offensive;
-			if(hp<=50) {
-				status +="※警告！HPが危険れべるです。";
+		public String toString() {
+			String alert = "";
+			if (this.hp <= 50) {
+				alert = "★ HP残りわずか！アブナイ";
 			}
-			return status;
+			return String.format("[名前]: %s, [ヒットポイント]: %d, [攻撃力]: %d %s", this.name, this.hp, this.offensive, alert);
 		}
 }
