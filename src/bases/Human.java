@@ -17,16 +17,16 @@ public abstract class Human extends Living {
 		int damage=this.offensive*dice;
 		
 		// 相手のHPをダメージ値だけ減らす
-		target.hp-=damage;
+		target.setHp(target.getHp()-damage);
 		
 		// 自分の攻撃力を1だけ減らす
 		if(this.offensive>0) {
 			this.offensive--;
 		}
 		// コンソールにステータスを表示
-		System.out.println(this.name + "が" + target.name + "を攻撃した！");
-		System.out.println("サイコロの目: " + dice);
-		System.out.println("与えたダメージ: " + damage);
+		System.out.println("「" + this.name + "」が「" + this.weapon + "」で攻撃！「" + target.getName() + "」に" + damage + "のダメージを与えた。");
+		System.out.println("しかし自分の攻撃力も1減少した");
+
 		System.out.println(target.name + "の残りHP: " + target.hp);
 		System.out.println(this.name + "の攻撃力: " + this.offensive);
 
