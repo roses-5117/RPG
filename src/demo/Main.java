@@ -5,6 +5,12 @@ import java.util.List;
 
 import bases.Human;
 import bases.Monster;
+import humans.Brave;
+import humans.Fighter;
+import humans.Wizard;
+import monsters.Dragon;
+import monsters.Oak;
+import monsters.Slime;
 import utils.Dice;
 
 public class Main {
@@ -13,14 +19,23 @@ public class Main {
 		System.out.println("★★ ==== 戦いの開始だ！！ ==== ★★");
 
 		// Brave（勇者）, Fighter（戦士）, Wizard（魔法使い）クラスの各インスタンスを生成
-
+		Brave brave = new Brave("沖田総司", "剣");
+		Fighter fighter = new Fighter("金太郎", "斧");
+		Wizard wizard = new Wizard("安倍晴明", "魔法");
+		
 		// 人間グループのリストを空で生成
 		List<Human> humans = new ArrayList<>();
         
 		// 勇者、戦士、魔法使いを人間グループのリストに追加
-
+		humans.add(brave);
+		humans.add(fighter);
+		humans.add(wizard);
+		
 		// Slime（スライム）, Oak（オーク）, Dragon（ドラゴン）クラスの各インスタンスを生成
-
+		Slime slime = new Slime("キングスライム","体当たり");
+		Oak oak = new Oak("オークキング","槍");
+		Dragon dragon = new Dragon("紅龍","炎");
+		
 		// モンスターグループのリストを空で生成
 		List<Monster> monsters = new ArrayList<>();
 		
