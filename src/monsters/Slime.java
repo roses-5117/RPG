@@ -1,17 +1,15 @@
 package monsters;
 
-import java.util.Random;
-
 import bases.Monster;
+import utils.Dice;;
 
 public class Slime extends Monster {
 
     public Slime(String name, String weapon) {
         super(name, weapon);
         
-        Random rand = new Random();
-        this.hp = rand.nextInt(61) + 70;       // 70〜130（=60+1）
-        this.offensive = rand.nextInt(7) + 5;   // 5〜11（=6+1）
+        this.hp = Dice.get(70, 130);         
+        this.offensive = Dice.get(5, 11);  
     }
 
 }
